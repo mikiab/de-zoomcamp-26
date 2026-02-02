@@ -1,3 +1,8 @@
 # DE Zoomcamp 2026 Homework
 
 - [DataTalksClub Data Engineering Zoomcamp 2026](https://github.com/DataTalksClub/data-engineering-zoomcamp)
+
+## Homework Solutions
+
+- [Module 1: Docker, SQL and Terraform](./module01/README.md)
+- [Module 2: Workflow Orchestration](./module02/README.md)
