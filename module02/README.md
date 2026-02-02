@@ -1,7 +1,13 @@
-# Questions
+# Module 2 Homework
 
 The homework solutions utilize [this](./flows/zoomcamp.gcp_taxi_scheduled.yaml) 
 GCP scheduled YAML file. All queries were run in Google BigQuery.
+
+*Note: For the row count queries, I filtered by filename to ensure I counted 
+exactly the rows from the requested files, rather than partitioning by date. 
+This causes a full table scan and would be inefficient in a production 
+environment, but it was necessary to handle the dirty data (incorrect years) 
+present in the source files.*
 
 ## Question 1
 
@@ -41,16 +47,16 @@ How many rows are there for the Yellow Taxi data for all CSV files in the year
 
 ```sql
 SELECT 
-    COUNT(1)
+    COUNT(1) AS count
 FROM 
     `gcp-taxi.taxi_ds.yellow_tripdata` 
-WHERE
-    EXTRACT(YEAR FROM tpep_pickup_datetime) = 2020
+WHERE 
+    STRPOS(filename, '2020') > 0
 ```
 
-| COUNT  |
-|-------:|
-|24648499|
+| `count` |
+|--------:|
+| 24648499|
 
 ## Question 4
 
@@ -59,16 +65,16 @@ How many rows are there for the Green Taxi data for all CSV files in the year
 
 ```sql
 SELECT 
-    COUNT(1)
+    COUNT(1) AS count
 FROM 
     `gcp-taxi.taxi_ds.green_tripdata` 
 WHERE 
-    EXTRACT(YEAR FROM lpep_pickup_datetime) = 2020
+    STRPOS(filename, '2020') > 0
 ```
 
-| COUNT |
-|------:|
-|1733998|
+| `count` |
+|--------:|
+|  1734051|
 
 ## Question 5
 
@@ -76,18 +82,16 @@ How many rows are there for the Yellow Taxi data for the March 2021 CSV file?
 
 ```sql
 SELECT 
-    COUNT(1)
+    COUNT(1) AS count
 FROM 
     `gcp-taxi.taxi_ds.yellow_tripdata` 
 WHERE 
-    TIMESTAMP_TRUNC(tpep_pickup_datetime, DAY) >= TIMESTAMP("2021-03-01")
-AND
-    TIMESTAMP_TRUNC(tpep_pickup_datetime, DAY) < TIMESTAMP("2021-04-01")
+    STRPOS(filename, '2021-03') > 0
 ```
 
-| COUNT |
-|------:|
-|1925119|
+| `count` |
+|--------:|
+|  1925152|
 
 ## Question 6
 
