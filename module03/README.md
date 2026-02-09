@@ -156,9 +156,9 @@ AS
 SELECT * FROM `gcp-taxi.taxi_ds.yellow_taxi_trips_raw`;
 ```
 
-> Note: the question mentions `tpep_dropoff_datetime` which contains timestamps, 
-> but it should refer to the date part of `tpep_dropoff_datetime` because the 
-> next question asks to filter the new partioned table by specific date range.
+*Note: the question mentions `tpep_dropoff_datetime` which contains timestamps,
+but it should refer to the date part of `tpep_dropoff_datetime` because the
+next question asks to filter the new partioned table by specific date range.*
 
 ## Question 6
 
