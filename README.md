@@ -7,3 +7,4 @@
 - [Module 1: Docker, SQL and Terraform](./module01/README.md)
 - [Module 2: Workflow Orchestration](./module02/README.md)
 - [Module 3: Data Warehousing & BigQuery](./module03/README.md)
+- [Module 4: Analytics Engineering with dbt](./module04/README.md)
