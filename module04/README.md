@@ -139,13 +139,15 @@ is the grand total (sum) of all zones.*
 
 Create a staging model for the **For-Hire Vehicle (FHV)** trip data for 2019.
 
-1. Load the FHV trip data for 2019 into your data warehouse
-**Data was loaded using the [ingest.py](./ingest.py) script.**
+1. Load the [FHV trip data for 2019](https://github.com/DataTalksClub/nyc-tlc-data/releases/tag/fhv) into your data warehouse
 2. Create a staging model `stg_fhv_tripdata` with these requirements:
-  - Filter out records where `dispatching_base_num IS NULL`
-  - Rename fields to match your project's naming conventions (e.g., 
-  `PUlocationID` → `pickup_location_id`)
-**[stg_fhv_tripdata](./taxi_rides_ny/models/staging/stg_fhv_tripdata.sql)**
+   - Filter out records where `dispatching_base_num IS NULL`
+   - Rename fields to match your project's naming conventions (e.g., `PUlocationID` → `pickup_location_id`)
+
+**Answer:**
+
+1. Data was loaded using the [ingest.py](./ingest.py) script
+2. [Staging model](./taxi_rides_ny/models/staging/stg_fhv_tripdata.sql) and [schema](./taxi_rides_ny/models/staging/stg_fhv_tripdata.yml)
 
 What is the count of records in `stg_fhv_tripdata`?
 
