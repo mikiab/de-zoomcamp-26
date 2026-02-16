@@ -1,0 +1,36 @@
+models:
+  - name: stg_fhv_tripdata
+    description: >
+      Staging model for FHV trip data. This model standardizes column names
+      and data types from the raw green_tripdata source, providing a clean foundation
+      for downstream transformations.
+    columns:
+      - name: dispatching_base_num
+        description: The TLC Base License Number of the base that dispatched the trip
+        data_tests:
+          - not_null
+
+      - name: affiliated_base_num
+        description: Base number of the base with which the vehicle is affiliated
+        data_tests:
+          - not_null
+
+      - name: pickup_location_id
+        description: TLC Taxi Zone in which the trip began
+
+      - name: dropoff_location_id
+        description: TLC Taxi Zone in which the trip ended
+
+      - name: pickup_datetime
+        description: The date and time of the trip pick-up
+        data_tests:
+          - not_null
+
+      - name: dropoff_datetime
+        description: The date and time of the trip dropoff
+
+      - name: shared_ride_flag
+        description: |
+          "Indicates if the trip was a part of a shared ride chain offered by a High
+          Volume FHV company (e.g. Uber Pool, Lyft Line). For shared trips, the value
+          is 1. For non-shared rides, this field is null"
