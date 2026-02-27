@@ -8,3 +8,4 @@
 - [Module 2: Workflow Orchestration](./module02/README.md)
 - [Module 3: Data Warehousing & BigQuery](./module03/README.md)
 - [Module 4: Analytics Engineering with dbt](./module04/README.md)
+- [Module 5: Data Platforms with Bruin](./module05/README.md)
