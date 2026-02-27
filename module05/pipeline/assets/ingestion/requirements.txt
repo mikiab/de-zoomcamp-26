@@ -1,0 +1,5 @@
+# Python dependencies required by the ingestion asset.
+requests==2.32.5
+python-dateutil==2.9.0
+polars==1.38.1
+duckdb[all]==1.4.4

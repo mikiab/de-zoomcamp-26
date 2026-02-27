@@ -1,0 +1,25 @@
+# Zoomcamp template: pipeline.yml
+
+# Pipeline name. This shows up in logs + `BRUIN_PIPELINE` for Python assets.
+name: nyc-taxi
+
+# Accept "daily", "hourly", "weekly", "monthly" or a cron string.
+schedule: "daily"
+
+# Earliest date stored in `BRUIN_START_DATE` after backfill (--full-refresh)
+start_date: "2022-01-01"
+
+# All connections are configured in `.bruin.yml`
+default_connections:
+  duckdb: duckdb-default
+
+# Define pipeline variables using a JSON Schema
+# They are stored in `BRUIN_VARS` as a JSON object
+# Use them in SQL or YAML assets with the syntax `{{ var.variable_name }}`
+variables:
+  # `taxi_types` is an array of strings
+  taxi_types:
+    type: array
+    items:
+      type: string
+    default: ["yellow", "green"] # --var is not needed if `default` is set
