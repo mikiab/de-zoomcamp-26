@@ -9,3 +9,4 @@
 - [Module 3: Data Warehousing & BigQuery](./module03/README.md)
 - [Module 4: Analytics Engineering with dbt](./module04/README.md)
 - [Module 5: Data Platforms with Bruin](./module05/README.md)
+- [Workshop 1: Ingestion with dlt](./dlt-workshop/README.md)
