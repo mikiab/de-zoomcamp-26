@@ -1,0 +1,9 @@
+[project]
+name = "spark"
+version = "0.1.0"
+description = "Spark homework"
+requires-python = ">=3.13,<3.14"
+dependencies = [
+    "pyspark[sql]==4.1.1",
+    "requests>=2.32.5",
+]
