@@ -11,3 +11,4 @@
 - [Module 5: Data Platforms with Bruin](./module05/README.md)
 - [Workshop 1: Ingestion with dlt](./dlt-workshop/README.md)
 - [Module 6: Batch Processing with Spark](./module06/README.md)
+- [Module 7: Stream Processing with Kafka and Flink](./module07/README.md)
